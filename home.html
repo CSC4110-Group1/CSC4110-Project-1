@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta http-equiv="content-type" content="text/html; charset=windows-1252">
     <title>Inelastic goods: Homepage</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+      // When the user scrolls the page, execute myFunction
+      window.onscroll = function() {myFunction()};
+
+      // Get the navbar
+      var navbar = document.getElementById("navbar");
+
+      // Get the offset position of the navbar
+      var sticky = navbar.offsetTop;
+
+      // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
   </head>
+
+
   <body>
     <div>
       <h1 id="banner">Inelastic goods Inc.</h1>
       <ul id="nav">
-        <li class="active"><a href="">Home</a></li>
+        <li class="active"><a href="home.html">Home</a></li>
         <li class="dropdown"> <a href="" class="dropbtn">Projects</a>
-          <div class="dropdown-content"> <a href="#">Project 1</a> <a href="#">Project
-              2</a> <a href="#">Project 3</a> </div>
+          <div class="dropdown-content">
+            <a href="#">Project 1</a>
+            <a href="#">Project 2</a>
+            <a href="#">Project 3</a> 
+          </div>
         </li>
-        <li><a href="">Meet our Team</a></li>
-        <li><a href="">About</a></li>
+        <li><a href="meetOurTeam.html">Meet our Team</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
       <div id="about">Text block 1 goes here</div>
       <div id="about">Text block 2 goes here</div>
