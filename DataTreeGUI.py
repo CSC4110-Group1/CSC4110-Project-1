@@ -19,7 +19,7 @@ label3 = tk.Label(master=window,text="Please choose from the following options b
 label4=tk.Label(master=window, image=logo)
 
 #button Creation 
-button1 = tk.Button(master=window,text="Import Data",bg="brown",fg='white',font="ariel",width="18")
+button1 = tk.Button(master=window,text="Add Data",bg="brown",fg='white',font="ariel",width="18")
 button2 = tk.Button(master=window,text="Delete Last Entry",bg="brown",fg='white',font="ariel",width="18")
 button3 = tk.Button(master=window,text="Add Random Entry",bg="brown",fg='white',font="ariel",width="18")
 button4 = tk.Button(master=window,text="Search Order Id",bg="brown",fg='white',font="ariel",width="18")
