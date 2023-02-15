@@ -1,6 +1,5 @@
 import tkinter as tk
-from tkinter.ttk import *
-import customtkinter
+
 
 #window setup
 window = tk.Tk()
