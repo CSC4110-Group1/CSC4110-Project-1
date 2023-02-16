@@ -1,3 +1,6 @@
+
+#Revision #1-20 IanSiple 2/XX/2023
+#Revision #X AliChowdhury 2/16/2023
 from Forestview_DataEntry import Forestview_DataEntry
 from Forestview_ReadOrdersCsv import Forestview_OpenOrdersCsv
 from Forestview_ReadOrderDetailsCsv import Forestview_OpenOrderDetailsCsv
@@ -9,11 +12,12 @@ import string
 class Forestview_Database:
     #Method to create data structure
     def __init__(self):
+        """Creates the initial data structure"""
         #Empty dictionary to store data based off of order id as key
         self.forestview_datastructure = {}
         #Store data from csv files into variables
         self.order_data = Forestview_OpenOrdersCsv().return_orders()
-        self.order_detial_data = Forestview_OpenOrderDetailsCsv().return_order_details()
+        self.order_detail_data = Forestview_OpenOrderDetailsCsv().return_order_details()
         #Create data structure
         self.create_data_structure()
         #Variable to keep track of last order... mainly used to add order to database
@@ -21,16 +25,19 @@ class Forestview_Database:
     
     #Creates database
     def create_data_structure(self):
+        """Iterates through the data structure"""
         for i in range(len(self.order_data)):
-            self.forestview_datastructure[self.order_data[i][0]] = self.order_data[i] + self.order_detial_data[i]
+            self.forestview_datastructure[self.order_data[i][0]] = self.order_data[i] + self.order_detail_data[i]
 
     #Deletes last order from database
     def delete_last_entry(self):
+        """Deletes last entry of the file"""
         self.forestview_datastructure.pop()
     
     
     #Method to generate random order and order details and then adds it to dictionary
     def add_random_entry(self):
+        """Perpetually creates and returns a random user"""
         order = []
         order_id = str(int(self.LAST_ORDER.get_order_id()) + 1)
         customer_id = "SAMPL"
@@ -62,6 +69,7 @@ class Forestview_Database:
 
     #Reverses data structure
     def reverse_data(self):
+        """Reverses data structure"""
         self.forestview_datastructure = dict(reversed(list(self.forestview_datastructure.items())))
     #================================================================================================================================#
     #===================================================Search engine================================================================#
@@ -69,6 +77,7 @@ class Forestview_Database:
     
     #Search by order id returns order data as list
     def search_order_id(self, order_id):
+        """Searches through the data structure and returns order data as a list"""
         try:
             return str(self.forestview_datastructure[order_id])
         except KeyError:
@@ -76,6 +85,7 @@ class Forestview_Database:
         
     #Search orders by customer id returns all orders from that customer
     def search_customer_id(self, customer_id):
+        """Searches through the data structure and returns all orders from that specific customer"""
         #List to keep track of order ids... returns order ids
         orders = []
         try:
@@ -89,6 +99,7 @@ class Forestview_Database:
     
     #Search orders by employee id returns all orders completed by that employee
     def search_employee_id(self, employee_id):
+        """Searches the data structure and returns all orders completed by that employee"""
         #List to keep track of order ids... returns order ids
         orders = []
         try:
@@ -102,6 +113,7 @@ class Forestview_Database:
 
     #Search orders by order date returns orders ordered on that date
     def search_order_date(self, order_date):
+        """Searches orders by order date and returns orders that were ordered on that date"""
         #List to keep track of order ids... returns order ids
         orders = []
         try:
@@ -115,6 +127,7 @@ class Forestview_Database:
     
     #Search orders by required date delivered returns list of orders required to be delivered that day
     def search_required_date(self, required_date):
+        """Searches orders that are promised on the specific date"""
         #List to keep track of order ids... returns order ids
         orders = []
         try:
@@ -128,6 +141,7 @@ class Forestview_Database:
     
     #Search orders by when they were shipped returns list of orders shipped on that date
     def search_shipped_date(self, shipped_date):
+        """Searches orders via shipped date, returns list of orders shipped on that date"""
         #List to keep track of order ids... returns order ids
         orders = []
         try:
@@ -141,6 +155,7 @@ class Forestview_Database:
     
     #Search orders by way of shipment returns list of orders shipped the same way
     def search_ship_via(self, ship_via):
+        """Searches orders via shipping method and returns list of orders via that method"""
         #assuming 1 is ground, 2 is ship, 3 is plane
         orders = []
         ship_via = ship_via.lower()
@@ -165,6 +180,7 @@ class Forestview_Database:
     
     #Search orders by customer name returns all orders ordered from that customer
     def search_ship_name(self, ship_name):
+        """Searches orders by customer name and returns all orders from that customer"""
         orders = []
         #List to keep track of order ids... returns order ids
         ship_name = ship_name.upper()
@@ -179,6 +195,7 @@ class Forestview_Database:
     
     #NEEDS WORKKKKK
     def search_ship_address(self, ship_address):
+        """Searches the data structure for the shipping address and returns orders made to that address"""
         orders = []
         #List to keep track of order ids... returns order ids
         ship_address = ship_address.upper()
@@ -192,6 +209,7 @@ class Forestview_Database:
             return "ERROR... NO ORDERS WERE SHIPPED TO ADDRESS AT: " + ship_address
         
     def search_ship_city(self, ship_city):
+        """Searches the data structure for the shipping address and returns orders made to that city"""
         orders = []
         #List to keep track of order ids... returns order ids
         ship_city = ship_city.upper()
@@ -203,3 +221,6 @@ class Forestview_Database:
             return str(orders)
         except IndexError:
             return "ERROR... NO ORDERS WERE SHIPPED TO: " + ship_city
+
+#Revision Number # 2/2X/2023
+##End Ali Chowdhury 2/16/2023
