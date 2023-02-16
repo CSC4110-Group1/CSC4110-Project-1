@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
       body {
-        background-image: linear-gradient(white, grey);
+        background-image: white;
         background-repeat: no-repeat;
       }
       html{
@@ -44,21 +44,32 @@ nav{
 
 <body>
 <div class="container">
+  <!--reactive navigation bar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
+
+      <!--Logo/home link-->
       <a class="navbar-brand" href="home.html">
         <img src="craiyon_151530_software_development_company_logo_that_looks_like_a_tree_using_only_green_and_brown_a.png"
         alt="Company logo" style="height:200px;width:200px;"></a>
+
+        <!--button for when nav bar is collapsed-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!--main nav links-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <!--home -->
             <li class="nav-item">
             <a class="nav-link" aria-current="page" href="home.html" style="font-size:25px;">Home</a>
           </li>
+
+          <!-- projects dropdown-->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
             data-bs-toggle="dropdown" aria-expanded="false" style="font-size:25px;">
@@ -72,9 +83,13 @@ nav{
               <li><a class="dropdown-item" href="project_3.html">Project 3</a></li>
             </ul>
           </li>
+
+          <!--team members-->
           <li class="nav-item">
             <a class="nav-link" href="meetOurTeam.html" style="font-size:25px;">Meet our team</a>
           </li>
+
+          <!--about company-->
           <li class="nav-item">
             <a class="nav-link" href="about.html" style="font-size:25px;">About</a>
           </li>
@@ -82,6 +97,8 @@ nav{
       </div>
     </div>
   </nav>
+
+  <!--main body-->
   <p><br><br><br><br>
     <h1 class="mt-5">Project 1</h1>  
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -332,7 +349,8 @@ nav{
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Disagree</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Disagree</button> <!--dismiss button-->
+                <!--download button-->
                 <a href="https://drive.google.com/file/d/1tCLYnQ6vrlZZRTdIWN4GPMaMLLZMpEaw/view?usp=share_link" download="logo"><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button></a>
             </div>
         </div>
