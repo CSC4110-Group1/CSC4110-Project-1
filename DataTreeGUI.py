@@ -7,7 +7,7 @@ window.title("Datatree",)
 window.geometry("800x400")
 window.configure(bg='light green')
 #loads image into logo variable
-logo=tk.PhotoImage(file='datatree_Logo.png')
+logo=tk.PhotoImage(file='datatree_Logo1.png')
 
 #labels
 label1 = tk.Label(master=window,text="Datatree Interactive Database",fg='brown',bg='light green',font=("Arial", 25))
@@ -15,7 +15,7 @@ label2 = tk.Label(master=window,text="Make your data like tree and leaf the rest
                   fg='brown',bg='light green',font=("Arial", 9))
 label3 = tk.Label(master=window,text="Please choose from the following options bellow:",
                   fg='brown',bg='light green',font=("Arial", 12))
-label4=tk.Label(master=window, image=logo)
+label4=tk.Label(master=window, image=logo,bg='light green')
 
 #button Creation 
 button1 = tk.Button(master=window,text="Add Data",bg="brown",fg='white',font="ariel",width="18")
