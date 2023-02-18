@@ -17,6 +17,7 @@ def Close():
     newWindow.destroy()
 
 def new_window(choice):
+    
     """opens a new window based on what button the user presses."""
     global newWindow
     newWindow=tk.Toplevel(window)
@@ -24,33 +25,31 @@ def new_window(choice):
     newWindow.geometry("400x400")
     newWindow.configure(bg='light green')
     global entry1
+    Button_name=["add data","delete the last entry","to add a random entry","search by order ID",
+                 "to search by customer ID","to search by employee ID",
+                 "to search by order date","to search by order ID","to search by required date",
+                 "to search by shipped date","to search by ship via","to search by ship name",
+                 "to search by ship address","to search by ship city"]
 
-    #boolean statement that takes user input based on the button pressed
+    #boolean statment that takes user input based on the button pressed
     if choice==1:
-        l1=tk.Label(master=newWindow, text="Click the button below to add data",
+        l1=tk.Label(master=newWindow, text="Click the button below "+Button_name[choice-1],
                     bg="light green",fg="brown",font=("Arial", 12))
         b1 =tk.Button(master=newWindow,text="Add",bg="brown",fg='white',
                       font="ariel",width="10",command=lambda: data(choice))
         l1.place(x=55,y=10)
         b1.place(x=120,y=35)
-
     elif choice==2:
-        l1=tk.Label(master=newWindow, text="Click the button below to delete the last entry",
+       
+        l1=tk.Label(master=newWindow, text="Click the button below "+Button_name[choice-1],
                     bg="light green",fg="brown",font=("Arial", 12))
-        b1 =tk.Button(master=newWindow,text="Delete",bg="brown",fg='white',font="ariel"
-                      ,width="10",command=lambda: data(choice))
-        l1.place(x=47,y=10)
+        b1 =tk.Button(master=newWindow,text="Delete",bg="brown",fg='white',
+                    font="ariel",width="10",command=lambda: data(choice))
+        l1.place(x=55,y=10)
         b1.place(x=120,y=35)
-    elif choice==3:
-        l1=tk.Label(master=newWindow, text="Click the button below to add a random entry",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        b1 =tk.Button(master=newWindow,text="Add",bg="brown",fg='white',
-                      font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=47,y=10)
-        b1.place(x=120,y=35)
-        
-    elif choice==4:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by order ID",
+
+    else: 
+        l1=tk.Label(master=newWindow, text="Enter text below "+Button_name[choice-1],
                     bg="light green",fg="brown",font=("Arial", 12))
         entry1=tk.Entry(master=newWindow, width=52)  
         b1 =tk.Button(master=newWindow,text="Search",bg="brown",fg='white',font="ariel",
@@ -58,97 +57,6 @@ def new_window(choice):
         l1.place(x=50,y=10)
         entry1.place(x=30,y=35)
         b1.place(x=120,y=60)
-    elif choice==5:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by customer ID",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",fg='white',font="ariel",width="10",
-                      command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    elif choice==6:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by employee ID",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",fg='white',
-                      font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    elif choice==7:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by order date",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",
-                      fg='white',font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    elif choice==8:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by order ID",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",fg='white',
-                      font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    elif choice==9:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by required date",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",fg='white',
-                      font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    elif choice==10:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by shipped date",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",
-                      fg='white',font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    elif choice==11:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by ship via",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",
-                      fg='white',font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    elif choice==12:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by ship name",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",fg='white',
-                      font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    elif choice==13:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by ship address",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",fg='white',
-                      font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    else:
-        l1=tk.Label(master=newWindow, text="Enter text below to search by city shipped",
-                    bg="light green",fg="brown",font=("Arial", 12))
-        entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",fg='white',
-                      font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=50,y=10)
-        entry1.place(x=30,y=35)
-        b1.place(x=120,y=60)
-    
     #Button created to exit window
     exit=tk.Button(master=newWindow,text="Close",bg="brown",fg='white',font=("Arial", 9),
                    width="10",command=Close)
