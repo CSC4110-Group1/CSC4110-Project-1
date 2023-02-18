@@ -6,37 +6,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-      body {
-        background-image: white;
-
-      }
-      html{
-        min-height: 100%;
-      }
-      p, li {
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-h1{
-      animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    }
- 
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-     }
-}
-nav{
-  border-radius: 25px;
-}
-    </style>
+    
+    <!-- Basic stylesheet-->
+    <link rel="stylesheet" href="style.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -51,7 +23,7 @@ nav{
 
       <!--Logo/home link-->
       <a class="navbar-brand" href="home.html">
-        <img src="craiyon_151530_software_development_company_logo_that_looks_like_a_tree_using_only_green_and_brown_a.png"
+        <img src="logo-main.png"
         alt="Company logo" style="height:200px;width:200px;"></a>
 
         <!--button for when nav bar is collapsed-->
@@ -108,7 +80,7 @@ nav{
     </div>
     <div class="p2">
       <h1 class="mt-5">The Main Pillars of DataTree</h1>
-        <ul>
+        <ul class="pillars">
           <li class="lead">
             <b>Security:</b> Both the security of the application and of the clients will always be our main priority. When new development starts, security is always the first aspect addressed. It is critical in our mission to create and maintain a secured application before it reaches the user.
           </li>
@@ -121,6 +93,29 @@ nav{
       <!-- Bootstrap JS -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-      </script>
-  </body>
+      </script>  
+  
+  
+  </div>
+</body>
+
+<footer>    
+  <div class="container">
+    <div class="footer-bottom">
+      <a class="footer-logo" href="home.html">
+        <img src="logo-footer.png" alt="DataTree"/> 
+        DataTree
+      </a>        
+      <ul class="privacy-menu">
+        <li>
+          <a href="terms.html">Terms & Conditions</a>
+        </li>
+        <li>
+          <a href="privacy.html">Privacy Policy</a>
+        </li>
+      </ul>
+      <p class="copyright">DataTree Inc. | Copyright 2023 | All rights reserved</p>  
+    </div>
+  </div>
+</footer>
 </html>
