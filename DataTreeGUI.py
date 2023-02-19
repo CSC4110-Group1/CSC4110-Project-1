@@ -78,7 +78,7 @@ def new_window(choice):
 #window setup
 window = tk.Tk()
 window.title("Datatree",)
-window.geometry("800x400")
+window.geometry("1200x800")
 window.configure(bg='light green')
 #loads image into logo variable
 logo=tk.PhotoImage(file='datatree_Logo1.png')
