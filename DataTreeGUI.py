@@ -1,6 +1,6 @@
 
-#Revision #1 Alexander Wade 2/18/2023
-#Begin Alexander Wade 2/18/2023
+#Revision #2 Alexander Wade 2/21/2023
+#Begin Alexander Wade 2/21/2023
 import tkinter as tk
 
 
@@ -25,34 +25,38 @@ def new_window(choice):
     newWindow.geometry("400x400")
     newWindow.configure(bg='light green')
     global entry1
-    Button_name=["add data","delete the last entry","to add a random entry","search by order ID",
-                 "to search by customer ID","to search by employee ID",
-                 "to search by order date","to search by order ID","to search by required date",
-                 "to search by shipped date","to search by ship via","to search by ship name",
-                 "to search by ship address","to search by ship city"]
+    Button_name=["to add a data entry:","to delete the last entry:","to add a random entry:","search by order ID:",
+                 "to search by customer ID:","to search by employee ID:",
+                 "to search by order date:","to search by order ID:","to search by required date:",
+                 "to search by shipped date:","to search by ship via:","to search by ship name:",
+                 ]
 
     #boolean statment that takes user input based on the button pressed
-    if choice==1:
-        l1=tk.Label(master=newWindow, text="Click the button below "+Button_name[choice-1],
-                    bg="light green",fg="brown",font=("Arial", 12))
-        b1 =tk.Button(master=newWindow,text="Add",bg="brown",fg='white',
-                      font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=55,y=10)
-        b1.place(x=120,y=35)
-    elif choice==2:
-       
+    if choice==2:
         l1=tk.Label(master=newWindow, text="Click the button below "+Button_name[choice-1],
                     bg="light green",fg="brown",font=("Arial", 12))
         b1 =tk.Button(master=newWindow,text="Delete",bg="brown",fg='white',
+                      font="ariel",width="10",command=lambda: data(choice))
+        l1.place(x=30,y=10)
+        b1.place(x=120,y=35)
+    elif choice==3:
+       
+        l1=tk.Label(master=newWindow, text="Click the button below "+Button_name[choice-1],
+                    bg="light green",fg="brown",font=("Arial", 12))
+        b1 =tk.Button(master=newWindow,text="Add",bg="brown",fg='white',
                     font="ariel",width="10",command=lambda: data(choice))
-        l1.place(x=55,y=10)
+        l1.place(x=30,y=10)
         b1.place(x=120,y=35)
 
-    else: 
+    else:
+        if choice==1:
+            t="Add"
+        else:
+            t="Search"
         l1=tk.Label(master=newWindow, text="Enter text below "+Button_name[choice-1],
                     bg="light green",fg="brown",font=("Arial", 12))
         entry1=tk.Entry(master=newWindow, width=52)  
-        b1 =tk.Button(master=newWindow,text="Search",bg="brown",fg='white',font="ariel",
+        b1 =tk.Button(master=newWindow,text=t,bg="brown",fg='white',font="ariel",
                       width="10",command=lambda: data(choice))
         l1.place(x=50,y=10)
         entry1.place(x=30,y=35)
@@ -118,10 +122,8 @@ button11 = tk.Button(master=window,text="Search Ship Via",
                      bg="brown",fg='white',font="ariel",width="18",command=lambda: new_window(11))
 button12 = tk.Button(master=window,text="Search Ship Name",
                      bg="brown",fg='white',font="ariel",width="18",command=lambda: new_window(12))
-button13 = tk.Button(master=window,text="Search Ship Address",
-                     bg="brown",fg='white',font="ariel",width="18",command=lambda: new_window(13))
-button14= tk.Button(master=window,text="Search Ship City",
-                    bg="brown",fg='white',font="ariel",width="18",command=lambda: new_window(14))
+
+
 
 #output to the screen
 label4.place(x=0,y=0)
@@ -140,10 +142,9 @@ button9.place(x=850,y=400)
 button10.place(x=350,y=500)
 button11.place(x=600,y=500)
 button12.place(x=850,y=500)
-button13.place(x=400,y=600)
-button14.place(x=750,y=600)
+
 
 
 tk.mainloop()
-#revision #1 2/18/2023
-#End Alexander Wade 2/18/2023
+#revision #2 2/21/2023
+#End Alexander Wade 2/21/2023
