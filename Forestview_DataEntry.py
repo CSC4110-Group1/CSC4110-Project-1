@@ -1,4 +1,3 @@
-
 class Forestview_DataEntry:
 
     def __init__(self, dataEntry):
@@ -52,7 +51,15 @@ class Forestview_DataEntry:
             return "Invalid Data Entry... ERROR RETRIEVING SHIPPED DATE"
     def get_ship_via(self):
         try:
-            return self.dataEntry[6]
+            ship_via = self.dataEntry[6]
+            if ship_via == '1':
+                return "Truck"
+            if ship_via == '2':
+                return "Plane"
+            if ship_via == '3':
+                return "UPS"
+            else:
+                return "Cargo Ship"
         except:
             return "Invalid Data Entry... ERROR RETRIEVING SHIP VIA"
     def get_freight(self):
@@ -65,48 +72,4 @@ class Forestview_DataEntry:
             return self.dataEntry[8]
         except:
             return "Invalid Data Entry... ERROR RETRIEVING SHIP NAME"
-    def get_ship_address(self):
-        try:
-            return self.dataEntry[9]
-        except:
-            return "Invalid Data Entry... ERROR RETRIEVING SHIPPING ADDRESS"
-    def get_ship_city(self):
-        try:
-            return self.dataEntry[10]
-        except:
-            return "Invalid Data Entry... ERROR RETRIEVING SHIPPING CITY"
-    def get_ship_region(self):
-        try:
-            return self.dataEntry[11]
-        except:
-            return "Invalid Data Entry... ERROR RETRIEVING SHIPPING REGION"
-    def get_ship_postal_code(self):
-        try:
-            return self.dataEntry[12]
-        except:
-            return "Invalid Data Entry... ERROR RETRIEVING SHIPPING POSTAL CODE"
-    def get_ship_country(self):
-        try:
-            return self.dataEntry[13]
-        except:
-            return "Invalid Data Entry... ERROR RETRIEVING SHIPPING COUNTRY"
-    def get_product_id(self):
-        try:
-            return self.dataEntry[14]
-        except:
-            return "Invalid Data Entry... ERROR RETRIEVING PRODUCT ID"
-    def get_unit_price(self):
-        try:
-            return self.dataEntry[15]
-        except:
-            return "Invalid Data Entry... ERROR RETRIEVING UNIT PRICE"
-    def get_quantity(self):
-        try:
-            return self.dataEntry[16]
-        except:
-            return "Invalid Data Entry... ERROR RETRIEVING QUANTITY ORDERED"
-    def get_discount(self):
-        try:
-            return self.dataEntry[17]
-        except:
-            return "Invalid Data Entry... ERROR RETRIEVING DISCOUNT"
+    
