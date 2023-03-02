@@ -1,5 +1,5 @@
-#Revision #1 Alexander Wade 2/18/2023
-#Begin Alexander Wade 2/18/2023
+#Revision #3 Alexander Wade 2/02/2023
+#Begin Alexander Wade 3/02/2023
 from Forestview_Database import Forestview_Database
 import pickle
 import tkinter as tk
@@ -13,54 +13,54 @@ def data(choice,window, database):
     if choice == 1:
             database.add_order_to_database(search)
             value = "Adding order to end of database...\n Order added was: " + database.return_last_order()
-            outputLabel = tk.Label(newWindow, text = value, bg = 'white', fg = 'black', wraplength=400)
-            outputLabel.place(x=150,y=100)
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.5,anchor="center")
             with open("ForestviewApp.pkl", "wb") as F:
                 pickle.dump(database, F)
     if choice == 2:
             value = "Deleting last order...\n Order Deleted was: " + database.delete_last_entry()
-            outputLabel = tk.Label(newWindow, text = value, bg = 'white', fg = 'black', wraplength=400)
-            outputLabel.place(x=150,y=100)
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
             with open("ForestviewApp.pkl", "wb") as F:
                 pickle.dump(database, F)
     if choice == 3:
             value = "Adding random order to database..." + "\n Order being added is: " + database.add_random_entry()
-            outputLabel = tk.Label(newWindow, text = value, bg = 'white', fg = 'black', wraplength=400)
-            outputLabel.place(x=150,y=100)
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
             with open("ForestviewApp.pkl", "wb") as F:
                 pickle.dump(database, F)
     if choice == 4:
             value = "Searching for Order ID: " + search + "\n Results: " + database.search_order_id(search)
-            outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
-            outputLabel.place(x=150, y=100)
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
     if choice == 5:
             value = "Searching for Orders with Customer ID: " + search.upper() + "\n Results: " + database.search_customer_id(search)
-            outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black',wraplength=400)
-            outputLabel.place(x=100, y=100)
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
     if choice == 6:
             value = "Searching for Orders filled by ID of Employee : " + search.upper() + "\n Results: " + database.search_employee_id(search)
-            outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
-            outputLabel.place(x=100, y=100)
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
     if choice == 7:
             value = "Searching for Orders ordered on the date : " + search.upper() + "\n Results: " + database.search_order_date(search)
-            outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
-            outputLabel.place(x=100, y=100)
-    if choice == 9:
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+    if choice == 8:
             value = "Searching for Orders needed by date : " + search.upper() + "\n Results: " + database.search_required_date(search)
-            outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
-            outputLabel.place(x=100, y=100)
-    if choice == 10:
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+    if choice == 9:
             value = "Searching for Orders shipped on date : " + search.upper() + "\n Results: " + database.search_shipped_date(search)
-            outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
-            outputLabel.place(x=100, y=100)
-    if choice == 11:
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+    if choice == 10:
             value = "Searching for Orders Shipped via : " + search.upper() + "\n Results: " + database.search_ship_via(search)
-            outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
-            outputLabel.place(x=100, y=100)
-    if choice == 12:
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+    if choice == 11:
             value = "Searching for Orders shipped to : " + search.upper() + "\n Results: " + database.search_ship_name(search)
-            outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
-            outputLabel.place(x=100, y=100)   
+            outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
+            outputLabel.place(relx=0.45,rely=0.3,anchor="center")  
     print(value)
 
 def Close():
@@ -78,7 +78,7 @@ def new_window(choice, window, database):
     global entry1
     Button_name=["to add a data entry:","to delete the last entry:","to add a random entry:","search by order ID:",
                  "to search by customer ID:","to search by employee ID:",
-                 "to search by order date:","to search by order ID:","to search by required date:",
+                 "to search by order date:","to search by required date:",
                  "to search by shipped date:","to search by ship via:","to search by ship name:",
                  ]
 
@@ -86,14 +86,14 @@ def new_window(choice, window, database):
     if choice==2:
         l1=tk.Label(master=newWindow, text="Click the button below "+Button_name[choice-1],
                     bg="light green",fg="brown",font=("Arial", 12))
-        b1 =tk.Button(master=newWindow,text="Delete",bg="brown",fg='white',
+        b1 =tk.Button(master=newWindow,text="Delete",bg="brown",fg='black',
                       font="ariel",width="10",command=lambda: data(choice, window, database))
         l1.place(x=30,y=10)
         b1.place(x=120,y=35)
     elif choice==3:
        
         l1=tk.Label(master=newWindow, text="Click the button below "+Button_name[choice-1],
-                    bg="light green",fg="black",font=("Arial", 12))
+                    bg="light green",fg="brown",font=("Arial", 12))
         b1 =tk.Button(master=newWindow,text="Add",bg="brown",fg='black',
                     font="ariel",width="10",command=lambda: data(choice, window, database))
         l1.place(x=30,y=10)
@@ -121,7 +121,7 @@ def main(database):
     #window setup
     window = tk.Tk()
     window.title("Datatree",)
-    window.geometry("1200x800")
+    window.geometry("1300x800")
     window.configure(bg='light green')
     #loads image into logo variable
     logo=tk.PhotoImage(file='datatree_Logo1.png')
@@ -151,16 +151,14 @@ def main(database):
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(6, window, database))
     button7 = tk.Button(master=window,text="Sarch Order Date",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(7, window, database))
-    button8 = tk.Button(master=window,text="Search Order Id",
+    button8 = tk.Button(master=window,text="Search Required Date",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(8, window, database))
-    button9 = tk.Button(master=window,text="Search Required Date",
+    button9 = tk.Button(master=window,text="Search Shipped Date",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(9, window, database))
-    button10 = tk.Button(master=window,text="Search Shipped Date",
+    button10 = tk.Button(master=window,text="Search Ship Via",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(10, window, database))
-    button11 = tk.Button(master=window,text="Search Ship Via",
+    button11 = tk.Button(master=window,text="Search Ship Name",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(11, window, database))
-    button12 = tk.Button(master=window,text="Search Ship Name",
-                        bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(12, window, database))
 
 
 
@@ -176,11 +174,10 @@ def main(database):
     button5.place(x=600,y=300)
     button6.place(x=850,y=300)
     button7.place(x=350,y=400)
-    button8.place(x=600,y=400)
-    button9.place(x=850,y=400)
-    button10.place(x=350,y=500)
-    button11.place(x=600,y=500)
-    button12.place(x=850,y=500)
+    button8.place(x=850,y=400)
+    button9.place(x=350,y=500)
+    button10.place(x=600,y=400)
+    button11.place(x=850,y=500)
 
 
 
@@ -192,5 +189,5 @@ if __name__ == "__main__":
         pickle.dump(database, F)
     main(database)
 
-#revision #1 2/18/2023
-#End Alexander Wade 2/18/2023
+#revision 3 3/02/2023
+#End Alexander Wade 3/02/2023
