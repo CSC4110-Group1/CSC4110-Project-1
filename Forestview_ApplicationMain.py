@@ -1,4 +1,4 @@
-#Revision #3 Alexander Wade 2/02/2023
+#Revision #1 Alexander Wade 2/02/2023
 #Begin Alexander Wade 3/02/2023
 from Forestview_Database import Forestview_Database
 import pickle
@@ -32,35 +32,35 @@ def data(choice,window, database):
     if choice == 4:
             value = "Searching for Order ID: " + search + "\n Results: " + database.search_order_id(search)
             outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
-            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+            outputLabel.place(relx=0.45,rely=0.5,anchor="center")
     if choice == 5:
             value = "Searching for Orders with Customer ID: " + search.upper() + "\n Results: " + database.search_customer_id(search)
             outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
-            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+            outputLabel.place(relx=0.45,rely=0.5,anchor="center")
     if choice == 6:
             value = "Searching for Orders filled by ID of Employee : " + search.upper() + "\n Results: " + database.search_employee_id(search)
             outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
-            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+            outputLabel.place(relx=0.45,rely=0.5,anchor="center")
     if choice == 7:
             value = "Searching for Orders ordered on the date : " + search.upper() + "\n Results: " + database.search_order_date(search)
             outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
-            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+            outputLabel.place(relx=0.45,rely=0.5,anchor="center")
     if choice == 8:
             value = "Searching for Orders needed by date : " + search.upper() + "\n Results: " + database.search_required_date(search)
             outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
-            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+            outputLabel.place(relx=0.45,rely=0.5,anchor="center")
     if choice == 9:
             value = "Searching for Orders shipped on date : " + search.upper() + "\n Results: " + database.search_shipped_date(search)
             outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
-            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+            outputLabel.place(relx=0.45,rely=0.5,anchor="center")
     if choice == 10:
             value = "Searching for Orders Shipped via : " + search.upper() + "\n Results: " + database.search_ship_via(search)
             outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
-            outputLabel.place(relx=0.45,rely=0.3,anchor="center")
+            outputLabel.place(relx=0.45,rely=0.5,anchor="center")
     if choice == 11:
             value = "Searching for Orders shipped to : " + search.upper() + "\n Results: " + database.search_ship_name(search)
             outputLabel = tk.Label(newWindow, text = value, bg = 'light green', fg = 'brown', wraplength=400)
-            outputLabel.place(relx=0.45,rely=0.3,anchor="center")  
+            outputLabel.place(relx=0.45,rely=0.5,anchor="center")  
     print(value)
 
 def Close():
@@ -149,7 +149,7 @@ def main(database):
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(5, window,database))
     button6 = tk.Button(master=window,text="Search Employee Id",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(6, window, database))
-    button7 = tk.Button(master=window,text="Sarch Order Date",
+    button7 = tk.Button(master=window,text="Search Order Date",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(7, window, database))
     button8 = tk.Button(master=window,text="Search Required Date",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(8, window, database))
