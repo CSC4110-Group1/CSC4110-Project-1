@@ -50,10 +50,26 @@ class Forestview_Database:
         self.LAST_ORDER = Forestview_DataEntry(order)
         #Returns newly added order
         return "Adding Randomly Generated Data... \n" + "Randomly Generated data is:\n" + list(self.forestview_datastructure)[-1]
-    
+    def return_last_order(self):
+        order_id = self.LAST_ORDER.get_order_id()
+        dataEntry = Forestview_DataEntry(self.forestview_datastructure[order_id])
+        order = "Order ID: " + str(dataEntry.get_order_id()) + "\n" \
+            + "Customer ID: " + str(dataEntry.get_customer_id()) + "\n" \
+            + "Employee ID: " + str(dataEntry.get_employee_id()) + "\n" \
+            + "Order Date: " + str(dataEntry.get_order_date()) + "\n" \
+            + "Required Date: " + str(dataEntry.get_required_date()) + "\n" \
+            + "Shipped Date: " + str(dataEntry.get_shipped_date()) + "\n" \
+            + "Shipped Via: " + str(dataEntry.get_ship_via()) + "\n" \
+            + "Freight: " + str(dataEntry.get_freight()) + "\n" \
+            + "Shipped To: " + str(dataEntry.get_ship_name())
+        return order
     def add_order_to_database(self, data):
         try:
-            list_of_vals = data.split(",")
+            val = ""
+            for char in data:
+                if str.isalnum(char) or char == "," or char == "-":
+                    val = val + char
+            list_of_vals = val.split(",")
             order_id = str(int(self.LAST_ORDER.get_order_id()) + 1)
             customer_id = list_of_vals[0]
             employee_id = list_of_vals[1]
@@ -63,9 +79,9 @@ class Forestview_Database:
             ship_via = list_of_vals[5]
             freight = list_of_vals[6]
             ship_name = list_of_vals[7]
-            ship_address = list_of_vals[8]
-            ship_city = list_of_vals[9]
-            
+            self.forestview_datastructure[order_id] = [order_id,customer_id, employee_id, order_date, required_date, shipped_date, ship_via, freight, ship_name]
+            order = [order_id, customer_id, employee_id, order_date, required_date, shipped_date, ship_via, freight, ship_name]
+            self.LAST_ORDER = Forestview_DataEntry(order)
 
         except:
             print("ERROR: Make sure strings are seperated by commas!")
@@ -77,8 +93,12 @@ class Forestview_Database:
     #Search by order id returns order data as list
     def search_order_id(self, order_id):
         try:
+            val = ""
+            for char in order_id:
+                if str.isalnum(char):
+                    val = val + char
             #return str(self.forestview_datastructure[order_id])
-            dataEntry = Forestview_DataEntry(self.forestview_datastructure[str(order_id)])
+            dataEntry = Forestview_DataEntry(self.forestview_datastructure[str(val)])
             order = "Order ID: " + str(dataEntry.get_order_id()) + "\n" \
             + "Customer ID: " + str(dataEntry.get_customer_id()) + "\n" \
             + "Employee ID: " + str(dataEntry.get_employee_id()) + "\n" \
@@ -97,8 +117,12 @@ class Forestview_Database:
         #List to keep track of order ids... returns order ids
         orders = []
         try:
+            val = ""
+            for char in customer_id:
+                if str.isalnum(char):
+                    val = val + char
             for keys in self.forestview_datastructure:
-                if self.forestview_datastructure[keys][1] == customer_id.upper():
+                if self.forestview_datastructure[keys][1] == val.upper():
                     orders.append(keys)
             orders[0]
             return str(orders)
@@ -110,8 +134,12 @@ class Forestview_Database:
         #List to keep track of order ids... returns order ids
         orders = []
         try:
+            val = ""
+            for char in employee_id:
+                if str.isalnum(char):
+                    val = val + char
             for keys in self.forestview_datastructure:
-                if self.forestview_datastructure[keys][2] == employee_id:
+                if self.forestview_datastructure[keys][2] == val:
                     orders.append(keys)
             orders[0]
             return str(orders)
@@ -123,8 +151,12 @@ class Forestview_Database:
         #List to keep track of order ids... returns order ids
         orders = []
         try:
+            val = ""
+            for char in order_date:
+                if str.isalnum(char) or char == "-":
+                    val = val + char
             for keys in self.forestview_datastructure:
-                if self.forestview_datastructure[keys][3][:10] == order_date:
+                if self.forestview_datastructure[keys][3][:10] == val:
                     orders.append(keys)
             orders[0]
             return str(orders)
@@ -136,8 +168,12 @@ class Forestview_Database:
         #List to keep track of order ids... returns order ids
         orders = []
         try:
+            val = ""
+            for char in required_date:
+                if str.isalnum(char) or char == "/" or char == "-":
+                    val = val + char
             for keys in self.forestview_datastructure:
-                if self.forestview_datastructure[keys][4][:10] == required_date:
+                if self.forestview_datastructure[keys][4][:10] == val:
                     orders.append(keys)
             orders[0]
             return str(orders)
@@ -149,8 +185,12 @@ class Forestview_Database:
         #List to keep track of order ids... returns order ids
         orders = []
         try:
+            val = ""
+            for char in shipped_date:
+                if str.isalnum(char) or char == "/" or char == "-":
+                    val = val + char
             for keys in self.forestview_datastructure:
-                if self.forestview_datastructure[keys][5][:10] == shipped_date:
+                if self.forestview_datastructure[keys][5][:10] == val:
                     orders.append(keys)
             orders[0]
             return str(orders)
@@ -161,8 +201,12 @@ class Forestview_Database:
     def search_ship_via(self, ship_via):
         #assuming 1 is ground, 2 is ship, 3 is plane
         orders = []
-        ship_via = ship_via.lower()
-        trans = ship_via.upper()
+        val = ""
+        for char in ship_via:
+            if str.isalnum(char):
+                val = val + char
+        ship_via = val.lower()
+        trans = val.upper()
         try:
             if ship_via == "ship":
                 ship_via = "1"
@@ -185,37 +229,15 @@ class Forestview_Database:
         #List to keep track of order ids... returns order ids
         ship_name = ship_name.upper()
         try:
+            val = ""
+            for char in ship_name:
+                if str.isalnum(char) or char == " ":
+                    val = val + char
             for keys in self.forestview_datastructure:
-                if self.forestview_datastructure[keys][8].upper() == ship_name:
+                if self.forestview_datastructure[keys][8].upper() == val.upper():
                     orders.append(keys)
             orders[0]
             return str(orders)
         except IndexError:
             return "ERROR... NO ORDERS WERE SHIPPED TO SOMEONE WITH NAME: " + ship_name
     
-    #NEEDS WORKKKKK
-    def search_ship_address(self, ship_address):
-        orders = []
-        #List to keep track of order ids... returns order ids
-        ship_address = ship_address.upper()
-        try:
-            for keys in self.forestview_datastructure:
-                if self.forestview_datastructure[keys][9].upper() == ship_address:
-                    orders.append(keys)
-            orders[0]
-            return str(orders)
-        except IndexError:
-            return "ERROR... NO ORDERS WERE SHIPPED TO ADDRESS AT: " + ship_address
-        
-    def search_ship_city(self, ship_city):
-        orders = []
-        #List to keep track of order ids... returns order ids
-        ship_city = ship_city.upper()
-        try:
-            for keys in self.forestview_datastructure:
-                if self.forestview_datastructure[keys][10].upper() == ship_city:
-                    orders.append(keys)
-            orders[0]
-            return str(orders)
-        except IndexError:
-            return "ERROR... NO ORDERS WERE SHIPPED TO: " + ship_city

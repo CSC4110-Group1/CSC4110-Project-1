@@ -1,56 +1,63 @@
 #Revision #1 Alexander Wade 2/18/2023
 #Begin Alexander Wade 2/18/2023
 from Forestview_Database import Forestview_Database
+import pickle
 import tkinter as tk
 
-def data(choice, window, database):
+def data(choice,window, database):
     """Function that recieves user input and executes the users commands """
     search="empty"
-    if choice>3:
+    if choice>3 or choice == 1:
         search=entry1.get()
     value = ""
-    match(choice):
-        case 1:
-            value = "Adding order to end of database...\n Order added was: " + 0
+    if choice == 1:
+            database.add_order_to_database(search)
+            value = "Adding order to end of database...\n Order added was: " + database.return_last_order()
             outputLabel = tk.Label(newWindow, text = value, bg = 'white', fg = 'black', wraplength=400)
             outputLabel.place(x=150,y=100)
-        case 2:
+            with open("ForestviewApp.pkl", "wb") as F:
+                pickle.dump(database, F)
+    if choice == 2:
             value = "Deleting last order...\n Order Deleted was: " + database.delete_last_entry()
             outputLabel = tk.Label(newWindow, text = value, bg = 'white', fg = 'black', wraplength=400)
             outputLabel.place(x=150,y=100)
-        case 3:
+            with open("ForestviewApp.pkl", "wb") as F:
+                pickle.dump(database, F)
+    if choice == 3:
             value = "Adding random order to database..." + "\n Order being added is: " + database.add_random_entry()
             outputLabel = tk.Label(newWindow, text = value, bg = 'white', fg = 'black', wraplength=400)
             outputLabel.place(x=150,y=100)
-        case 4:
+            with open("ForestviewApp.pkl", "wb") as F:
+                pickle.dump(database, F)
+    if choice == 4:
             value = "Searching for Order ID: " + search + "\n Results: " + database.search_order_id(search)
             outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
             outputLabel.place(x=150, y=100)
-        case 5:
+    if choice == 5:
             value = "Searching for Orders with Customer ID: " + search.upper() + "\n Results: " + database.search_customer_id(search)
             outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black',wraplength=400)
             outputLabel.place(x=100, y=100)
-        case 6:
+    if choice == 6:
             value = "Searching for Orders filled by ID of Employee : " + search.upper() + "\n Results: " + database.search_employee_id(search)
             outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
             outputLabel.place(x=100, y=100)
-        case 7:
+    if choice == 7:
             value = "Searching for Orders ordered on the date : " + search.upper() + "\n Results: " + database.search_order_date(search)
             outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
             outputLabel.place(x=100, y=100)
-        case 9:
+    if choice == 9:
             value = "Searching for Orders needed by date : " + search.upper() + "\n Results: " + database.search_required_date(search)
             outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
             outputLabel.place(x=100, y=100)
-        case 10:
+    if choice == 10:
             value = "Searching for Orders shipped on date : " + search.upper() + "\n Results: " + database.search_shipped_date(search)
             outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
             outputLabel.place(x=100, y=100)
-        case 11:
+    if choice == 11:
             value = "Searching for Orders Shipped via : " + search.upper() + "\n Results: " + database.search_ship_via(search)
             outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
             outputLabel.place(x=100, y=100)
-        case 12:
+    if choice == 12:
             value = "Searching for Orders shipped to : " + search.upper() + "\n Results: " + database.search_ship_name(search)
             outputLabel = tk.Label(newWindow, text= value, bg='white', fg='black', wraplength=400)
             outputLabel.place(x=100, y=100)   
@@ -151,7 +158,7 @@ def main(database):
     button10 = tk.Button(master=window,text="Search Shipped Date",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(10, window, database))
     button11 = tk.Button(master=window,text="Search Ship Via",
-                        bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(11, window. database))
+                        bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(11, window, database))
     button12 = tk.Button(master=window,text="Search Ship Name",
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(12, window, database))
 
@@ -181,6 +188,8 @@ def main(database):
 
 if __name__ == "__main__":
     database = Forestview_Database()
+    with open("ForestviewApp.pkl", "wb") as F:
+        pickle.dump(database, F)
     main(database)
 
 #revision #1 2/18/2023
