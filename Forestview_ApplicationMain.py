@@ -1,8 +1,9 @@
-#Revision #1 Alexander Wade 2/02/2023
+#Revision #3 Alexander Wade 2/02/2023
 #Begin Alexander Wade 3/02/2023
 from Forestview_Database import Forestview_Database
 import pickle
 import tkinter as tk
+from datetime import datetime
 
 def data(choice,window, database):
     """Function that recieves user input and executes the users commands """
@@ -141,6 +142,8 @@ def main(database):
     label4=tk.Label(master=window, image=logo,bg='light green')
     label5 = tk.Label(master=window,text="Click the button below to exit the application:",
                     fg='brown',bg='light green',font=("Arial", 12))
+    label6 = tk.Label(master=window,text='Version number 3  '+str(datetime.now()),fg='brown',
+                      bg='light green',font=("Arial", 9))
 
     #button Creation 
     button1 = tk.Button(master=window,text="Add Data",bg="brown",fg='black',
@@ -167,9 +170,10 @@ def main(database):
                         bg="brown",fg='black',font="ariel",width="18",command=lambda: new_window(11, window, database))
     button12 = tk.Button(master=window,text="Exit",
                         bg="brown",fg='black',font="ariel",width="8",command=exit)
-
+   
 
     #output to the screen
+    label6.place(x=0,y=700)
     label5.place(x=540,y=600)
     label4.place(x=0,y=0)
     label1.place(x=450,y=0)
