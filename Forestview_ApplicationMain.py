@@ -83,7 +83,7 @@ class App(customtkinter.CTk):
 
             # label 3
             self.label3 = customtkinter.CTkLabel(self.home_frame,
-                                                 text="Please choose from the following options bellow:",
+                                                 text="Please choose from the following options below:",
                                                  text_color= (App.LIGHT_COLOR, App.DARK_COLOR),
                                                  font=("Arial", 12))
             self.label3.place(relx=0.45, rely = 0.20, anchor='center')
