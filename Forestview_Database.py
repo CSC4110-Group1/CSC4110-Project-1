@@ -1,3 +1,5 @@
+#Revision #1 Ian Siple 2/02/2023
+#Begin Ian Siple 3/02/2023
 from Forestview_DataEntry import Forestview_DataEntry
 from Forestview_ReadOrdersCsv import Forestview_OpenOrdersCsv
 import random
@@ -67,7 +69,7 @@ class Forestview_Database:
         try:
             val = ""
             for char in data:
-                if str.isalnum(char) or char == "," or char == "-":
+                if str.isalnum(char) or char == "," or char == "-" or char == " ":
                     val = val + char
             list_of_vals = val.split(",")
             order_id = str(int(self.LAST_ORDER.get_order_id()) + 1)
@@ -240,4 +242,7 @@ class Forestview_Database:
             return str(orders)
         except IndexError:
             return "ERROR... NO ORDERS WERE SHIPPED TO SOMEONE WITH NAME: " + ship_name
-    
+
+#revision 1 3/02/2023
+#End Ian Siple 3/02/2023
+#Group 1/Project #1

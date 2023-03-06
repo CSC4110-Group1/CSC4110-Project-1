@@ -1,5 +1,5 @@
-#Revision #1 Alexander Wade 2/02/2023
-#Begin Alexander Wade 3/02/2023
+#Revision #1 Alexander Wade, Ian Siple 2/02/2023
+#Begin Alexander Wade, Ian Siple 3/02/2023
 from Forestview_Database import Forestview_Database
 import pickle
 import tkinter as tk
@@ -142,19 +142,19 @@ class App(customtkinter.CTk):
         newWindow = customtkinter.CTkToplevel(self)
         newWindow.attributes("-topmost", True)
         newWindow.title("Datatree")
-        newWindow.geometry("450x450")
+        newWindow.geometry("600x600")
         
         global entry1
-        Button_name=["to add a data entry:",
+        Button_name=['to add a data entry:\n Ex (Seperate by commas): "simob,7,1998-05-06,1998-06-03,1998-07-01,2,18.44,simons bistro"',
                      "to delete the last entry:",
                      "to add a random entry:",
-                     "search by order ID:",
-                     "to search by customer ID:",
-                     "to search by employee ID:",
-                     "to search by order date:",
-                     "to search by required date:",
-                     "to search by shipped date:",
-                     "to search by ship via:",
+                     'search by order ID:\n Ex: 11079',
+                     'to search by customer ID:\n Ex: SAMPL',
+                     "to search by employee ID:\n Ex: 2",
+                     "to search by order date:\n Ex (Use dashes): year-month-day",
+                     "to search by required date:\n Ex (Use dashes): year-month-day",
+                     "to search by shipped date:\n Ex (Use dashes): year-month-day",
+                     "to search by ship via:\n Ex: Any number 1-3",
                      "to search by ship name:"]
         
         #boolean statment that takes user input based on the button pressed
@@ -285,4 +285,5 @@ if __name__ == "__main__":
     app.mainloop()
 
 #revision 3 3/02/2023
-#End Alexander Wade 3/02/2023
+#End Alexander Wade, Ian Siple 3/02/2023
+#Group 1/Project #1
