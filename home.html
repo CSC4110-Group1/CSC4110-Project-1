@@ -1,50 +1,125 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<!doctype html>
+<html lang="en">
 
-    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
-    <title>Inelastic goods: Homepage</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-      // When the user scrolls the page, execute myFunction
-      window.onscroll = function() {myFunction()};
+<head>
+    <title>Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      // Get the navbar
-      var navbar = document.getElementById("navbar");
+    <!-- Basic stylesheet-->
+    <link rel="stylesheet" href="style.css">
 
-      // Get the offset position of the navbar
-      var sticky = navbar.offsetTop;
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
 
-      // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-      function myFunction() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky")
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      }
-    </script>
-  </head>
+<body>
+  <div class="container">
 
+  <!--reactive navigation bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
 
-  <body>
-    <div>
-      <h1 id="banner">Inelastic goods Inc.</h1>
-      <ul id="nav">
-        <li class="active"><a href="home.html">Home</a></li>
-        <li class="dropdown"> <a href="" class="dropbtn">Projects</a>
-          <div class="dropdown-content">
-            <a href="#">Project 1</a>
-            <a href="#">Project 2</a>
-            <a href="#">Project 3</a> 
-          </div>
-        </li>
-        <li><a href="meetOurTeam.html">Meet our Team</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-      <div id="about">Text block 1 goes here</div>
-      <div id="about">Text block 2 goes here</div>
-      <div id="about">Text block 3 goes here</div>
+      <!--Logo/home link-->
+      <a class="navbar-brand" href="home.html">
+        <img src="logo-main.png"
+        alt="Company logo" style="height:200px;width:200px;"></a>
+
+        <!--button for when nav bar is collapsed-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--main nav links-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!--home -->
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html" style="font-size:25px;">Home</a>
+          </li>
+
+          <!-- projects dropdown-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false" style="font-size:25px;">
+            Projects
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="project_1.html">Project 1</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="project_2.html">Project 2</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="project_3.html">Project 3</a></li>
+            </ul>
+          </li>
+
+          <!--team members-->
+          <li class="nav-item">
+            <a class="nav-link" href="meetOurTeam.html" style="font-size:25px;">Meet our team</a>
+          </li>
+
+          <!--about company-->
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" style="font-size:25px;">About</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </body>
+  </nav>
+
+  <!--main body-->
+  <h1 class="mt-5" style="text-align: center; padding: 30px 5px 5px 5px;">DataTree</h1>
+  <h5 style="text-align: center; padding-bottom: 5%;">Make your data like a tree and leaf the rest to us!</h5>
+  <p class="lead" style="text-align: center;">
+    insert "company photo" here
+    </p>
+  <h2 class="mt-5" style="margin-left: 27%;">Leading the industry in innovation</h2>
+  <p class="lead">
+    <img src="Employee Photos/pexels-fauxels-3183165.jpg" style="float: left; margin-right: 50px;border-radius: 10%; margin-bottom: 50px;" height="25%" width="25%">
+    At DataTree, we're leading the software development industry, creating innovative solutions designed to meet the ever evolving needs of our clients.<br>
+    Our team of expert developers are passionate about creating user-friendly software products that are fast, reliable and secure.<br>
+    We pride ourselves on our commitment to our clients and our unmatched customer service, ensuring that you always get the highest quality results.<br>
+    Whether you need software development, cloud development or application deployment services, we're committed to solving all your projects requirements.<br>
+    Let us take care of your business, and we'll take care of yours.<br>
+    Need pricing information, or want to set up a demo? Vist one of our projects pages to get started.
+  </p>
+  <br><br>
+  <h2 class="mt-5">Getting to the root of your business needs</h2>
+  <p class="lead">
+    <img src="Employee Photos/pexels-rodnae-productions-5922216.jpg" style="float: right; margin-left: 50px;border-radius: 10%;" height="25%" width="25%">
+    Need something diferent? our custom software solutions can be tailored to meet the unique needs of each customer.<br>
+    We have a superstar filled team of experienced developers with over 40 years of combined experience, who can create custom tailored applications for desktop, web, mobile platforms, and more.<br>
+    Whether you need a simple solution for data tracking or a complex system for prototyping ways to streamline your manufacturing processes, our experts will work with you to create a customized, fast, and reliable product taht excedes your expectations.<br>
+    Have software that you can't get rid of? We can integrate existing applications into your existing environment, or develop an entirely new platform from the ground up to meet your needs.
+  </p>
+</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+</body>
+<footer>    
+  <div class="container">
+    <div class="footer-bottom">
+      <a class="footer-logo" href="home.html">
+        <img src="logo-footer.png" alt="DataTree"/> 
+        DataTree
+      </a>        
+      <ul class="privacy-menu">
+        <li>
+          <a href="terms.html">Terms & Conditions</a>
+        </li>
+        <li>
+          <a href="privacy.html">Privacy Policy</a>
+        </li>
+      </ul>
+      <p class="copyright">DataTree Inc. | Copyright 2023 | All rights reserved</p>  
+    </div>
+  </div>
+</footer>
 </html>

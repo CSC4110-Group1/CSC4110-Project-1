@@ -1,35 +1,144 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
-    <title>Inelastic goods: Meet our team</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div>
-      <h1 id="banner">Inelastic goods Inc.</h1>
-      <ul id="nav">
-        <li><a href="home.html">Home</a></li>
-        <li class="dropdown"> <a href="" class="dropbtn">Projects</a>
-          <div class="dropdown-content">
-            <a href="#">Project 1</a>
-            <a href="#">Project 2</a>
-            <a href="#">Project 3</a> 
-          </div>
-        </li>
-        <li class="active"><a href="meetOurTeam.html">Meet our Team</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-      <div id="about">Text block 1 goes here<br>
-      </div>
-      <div id="about">Text block 2 goes here<br>
-      </div>
-      <div id="about">Text block 3 goes here<br>
-      </div>
-      <div id="about">Text block 4 goes here<br>
-      </div>
-      <div id="about">Text block 5 goes here<br>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Meet Our Team</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Basic stylesheet-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+  <!--reactive navigation bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <!--Logo/home link-->
+      <a class="navbar-brand" href="home.html">
+        <img src="logo-main.png"
+        alt="Company logo" style="height:200px;width:200px;"></a>
+
+        <!--button for when nav bar is collapsed-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--main nav links-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <!--home -->
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="home.html" style="font-size:25px;">Home</a>
+          </li>
+
+          <!-- projects dropdown-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false" style="font-size:25px;">
+            Projects
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="project_1.html">Project 1</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="project_2.html">Project 2</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="project_3.html">Project 3</a></li>
+            </ul>
+          </li>
+
+          <!--team members-->
+          <li class="nav-item">
+            <a class="nav-link active" href="meetOurTeam.html" style="font-size:25px;">Meet our team</a>
+          </li>
+
+          <!--about company-->
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" style="font-size:25px;">About</a>
+          </li>
+        </ul>
       </div>
     </div>
+  </nav>
+
+  <!--main body-->
+    <h1 class="mt-5">Ali Chowdhury - Developer</h1>
+    <p class="lead">
+      <img src="Employee Photos/IMG_2087.jpg" alt="Ali Chowdhury" align="left" height="450" width="250" style="margin: 5px 10px 5px 5px">
+      My name is Ali Chowdhury and I am an aspiring software engineer who is committed to leveraging my technical expertise to make a positive impact in the industry. With a professional demeanor and a keen eye for detail, I am focused on using my skills to expand my personal network and advance my career in the field of computer science.<br><br>
+      As a bilingual individual who is certified in HTML, CSS, and Test Out Network Pro, I possess the communication and collaboration skills necessary to work effectively with individuals from diverse backgrounds. My professional experience as an audio-visual IT co-op at Emerson and a retail associate at The UPS Store has honed my time management and problem-solving abilities, preparing me to succeed in high-pressure situations.<br><br>
+      
+      Currently, I am a senior pursuing a degree in computer science at Wayne State University, where I have consistently maintained a 4.0 GPA and earned a place on the College of Engineering's Dean's list for two consecutive semesters. I am on track to graduate in December 2023.
+      
+      In addition to my academic pursuits, I have participated in several volunteer and course work projects that showcase my technical proficiency, including designing and programming an RPG game, creating a calorie counting Discord bot, and developing a resource that utilizes the Selenium API to extract NBA player statistics and output them into a spreadsheet. I have also volunteered as a notary, spindled runner tags for the Susan G Komen race, and mentored freshmen students at SHHS to help them achieve passing grades.<br><br>
+
+      Overall, I am passionate about utilizing my technical skills to make a meaningful impact in the computer science industry. I look forward to exploring new opportunities and expanding my expertise in the field.
+    </p>
+    <h1 class="mt-5">Jared Endicott - Developer</h1>
+    <p class="lead">
+      <img src="Employee Photos/PXL_20230307_182015697~2.jpg" alt="Jared Headshot" align="left" height="25%" width="25%" style="margin: 5px 10px 5px 5px">
+      Jared Endicott is a hard-working college student, and aspiring software developer, currently attending Wayne State University studying computer science as a member of the Wayne state Honors College.<br> He has been working with code since he was 13 years old when he gained an intrest in programming trying to learn how video games were made, and how he could develop mods for them.<br><br>Outside of work He can generally be found
+      either at his desk playing games with friends or working on personal projects, or if the Michigan weather decides to play nice, he can be found jammed under one of his many cars that never seem to stay in running shape.<br><br>He is always looking to learn something new, especially when it comes to programming, and one day hopes to be able to get his dream job as an automotive powertrain embedded C software developer.
+    </p>
+    <br>
+      <h1 class="mt-5">Huy Hoang - Developer</h1>
+    <p class="lead">
+      <img src="Employee Photos/IMG_1123.jpg" alt="Huy Hoang" align="left" height="25%" width="25%" style="margin: 5px 10px 5px 5px">
+      Hello! My name is Huy Hoang, and I am currently majoring in Computer Science. From an early age, I have always been fascinated by technology and how it can be leveraged to solve complex problems. This passion led me to pursue a career in software development, with a particular focus on creating user-friendly and efficient applications.
+      <br><br>
+      During my studies, I have gained a strong foundation in programming languages such as Java, Python, and C++. I have also learned about algorithms, data structures, databases, and computer systems.
+      <br><br>      
+      I look forward to using my knowledge and skills to create innovative solutions that positively impact people's lives.
+      <br><br>
+    </p>
+    <h1 class="mt-5">Ian Siple - Developer</h1>
+    <p class="lead">
+      My name is Ian Siple, and I am an aspiring software engineer. I've been programming since I was about 12 years old when I joined my local high school robotics team. Currently, outside of school, I still help out my high school robotics team as a mentor. I also currently work for Optum as a software testing engineer. Outside work and school, I like to get outside and play any sort of sport. I am hoping to start traveling more in the coming years as well! I am still unsure of what I want to do with my degree and what industry I want to get into. I plan to move from job to job to experience different aspects of computer science and find what I'm interested in.
+    </p>
+    <h1 class="mt-5">Alexander Wade - Developer</h1>
+    <p class="lead" style="padding-bottom: 15%;">
+      <img src="Employee Photos/AlexWadePhoto.jpg" alt="Alex Headshot" align="left" height="25%" width="25%" style="margin: 5px 10px 5px 5px;padding-bottom: 10% ; clear: both;" >
+      Hi, my name is Alexander Wade, I am a senior at Wayne State University majoring in computer science.<br>
+       I am also a veteran of the United States Air Force, and I decided to return to school after leaving the military, so I am an older student.<br>
+         I am pursuing my degree in the hopes of becoming a software developer or possibly working in cybersecurity.<br>
+           During my years in college, I learned many programming languages such as C++,Java,Python, and R code.<br>
+            In addition, I also have an understanding of networking, and how to monitor them and configure firewalls to prevent attacks.<br>
+             I am looking forward to graduating and applying the knowledge that I learned.
+    </p>
+</div>
+  
+      <!-- Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+      </script>
   </body>
+  <footer>    
+    <div class="container">
+      <div class="footer-bottom">
+        <a class="footer-logo" href="home.html">
+          <img src="logo-footer.png" alt="DataTree"/> 
+          DataTree
+        </a>        
+        <ul class="privacy-menu">
+          <li>
+            <a href="terms.html">Terms & Conditions</a>
+          </li>
+          <li>
+            <a href="privacy.html">Privacy Policy</a>
+          </li>
+        </ul>
+        <p class="copyright">DataTree Inc. | Copyright 2023 | All rights reserved</p>  
+      </div>
+    </div>
+  </footer>
 </html>
