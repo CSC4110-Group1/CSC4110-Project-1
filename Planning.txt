@@ -1,0 +1,62 @@
+
+
+Classes:
+
+    -GetOrderData: retrieves order data and puts it in list form 
+    -GetOrderDetailData: retieves order detail data and puts it in list form
+    -Forestview_DataStructure: 
+                        -Combines order data and order detail data into one data structure
+                        -Framework for application actions
+    -Forestview_ApplicationMain:
+                        -Runs application with actions and visual
+
+    Forestview_GetOrdersCsv:
+                    -returns list of orders... so list of list
+    Forestview_GetOrderDetialsCsv:
+                    -return list of order details... list of list
+
+    Forestview_DataStructure:
+
+                    orders = key
+                    order details = value
+
+                    all data is collected same way... meaning each index will convey same information to us
+
+                    orders = [OrderID,CustomerID,EmployeeID,OrderDate,RequiredDate,ShippedDate,ShipVia,Freight,ShipName,ShipAddress,ShipCity,ShipRegion,ShipPostalCode,ShipCountry]
+                    order details = [OrderID,ProductID,UnitPrice,Quantity,Discount]
+
+                    orders at indexes:
+                        0:OrderID  
+                        1:CustomerID
+                        2:EmployeeID
+                        3:OrderDate
+                        4:RequiredDate
+                        5:ShippedDate
+                        6:ShipVia
+                        7:Freight
+                        8:ShipName
+                        9:ShipAddress
+                        10:ShipCity
+                        11:ShipRegion
+                        12:ShipPostalCode
+                        13:ShipCountry
+                    
+                    order details at indexes:
+                        0:OrderID
+                        1:ProductID
+                        2:UnitPrice
+                        3:Quantity
+                        4:Discount
+
+                    order details csv file has more entries than orders... make sure orderID's match when putting in data
+
+
+                    methods:
+                        -add Data: order, orderDetails
+                        *-remove Data: order
+                        -generate random order
+                        -generate randome orderDetails
+                        *-reverse data
+                        *-search
+
+                    dictionary: {order[14 items]:orderDetails[5 items]}
