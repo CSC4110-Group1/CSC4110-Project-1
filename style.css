@@ -63,3 +63,12 @@ nav{
     padding-top:5em;
     text-align: center;
 }
+.imgContainer {
+    height: 100px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: -23px;
+  }
